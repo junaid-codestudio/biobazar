@@ -63,3 +63,40 @@ function redirect($url)
 		echo '</noscript>'; exit;
 	}
 }
+
+function send_email ($to)
+{
+	$link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	$link = str_replace('includes/save_send_emails.php' , 'verify_email.php' , $link);
+	require_once("../PHPMailer/src/PHPMailer.php");
+	require_once("../PHPMailer/src/SMTP.php");
+	require_once("../PHPMailer/src/Exception.php");
+	
+	$mail = new PHPMailer\PHPMailer\PHPMailer();
+	$mail->SMTPDebug = 0;
+	$mail->isSMTP();
+	
+	$mail->Host = "mail.codestudio.pk";
+	$mail->Port = 465; //587
+	$mail->SMTPSecure = "ssl";
+	$mail->SMTPAuth = true;
+	$mail->Username = "info@codestudio.pk";
+	$mail->Password = "CodeStudio@123_";
+	
+	$mail->addAddress($to , "User Name");
+	$mail->Subject = "Please Verify Your Email Address";
+	$mail->isHTML();
+	$mail->Body = "Dear Customer, Please use following link to verify your eamil.<b> <br>" . $link . "<br> Thank you for registring.";
+	$mail->From = "info@codestudio.pk";
+	$mail->FromName = "BioBazar";
+	
+	if($mail->send()) {
+		$_SESSION['mail_sent_success'] = true;
+		echo 'email send suss';
+	}
+	else {
+		$_SESSION['mail_sent_success'] = false;
+		echo 'email not send suss';
+		echo "Failed To Sent An Email To Your Email Address";
+	}
+}

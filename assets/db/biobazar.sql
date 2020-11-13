@@ -7,10 +7,12 @@ CREATE TABLE email_subscriptions (
 	updated_at DATETIME DEFAULT current_timestamp() on update current_timestamp() NOT NULL,
 	deleted_at DATETIME NULL,
 	CONSTRAINT email_subscriptions_pk PRIMARY KEY (email_id),
-	CONSTRAINT email_subscriptions_un UNIQUE KEY (email),
-	emai_verified 
+	CONSTRAINT email_subscriptions_un UNIQUE KEY (email)
 )
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_general_ci;
 CREATE INDEX email_subscriptions_deleted_at_IDX USING BTREE ON email_subscriptions (deleted_at);
+
+ALTER TABLE email_subscriptions ADD email_verified_at DATETIME NULL;
+CREATE INDEX email_subscriptions_email_verified_at_IDX USING BTREE ON email_subscriptions (email_verified_at);

@@ -3,54 +3,174 @@
 
 /** {
 	font-family: 'Noto Sans', sans-serif;
-}*/
+	}*/
 
-.bg-gray {
-	background-color: rgb(246, 246, 246);
-}
+	.bg-gray {
+		background-color: rgb(246, 246, 246);
+	}
 
-.nav-green {
-	background-color: rgb(103, 189, 69);
-	font-family: 'Noto Sans', sans-serif;
-	font-weight: 700;
-}
+	.nav-green {
+		background-color: rgb(103, 189, 69);
+		font-family: 'Noto Sans', sans-serif;
+		font-weight: 700;
+	}
 
-.text-bold {
-	font-weight: 700 !important;
-}
+	.text-bold {
+		font-weight: 700 !important;
+	}
 
-.text-normal {
-	font-weight: 400 !important;
-}
+	.text-normal {
+		font-weight: 400 !important;
+	}
 
-.main-title {
-	font-family: 'Karla', sans-serif;
-	font-size: 50px !important;
-}
+	.main-title {
+		font-family: 'Karla', sans-serif;
+		/*font-size: 50px !important;*/
+	}
 
-.noto-sans {
-	font-family: 'Noto Sans', sans-serif;
-}
+	.noto-sans {
+		font-family: 'Noto Sans', sans-serif;
+	}
 
-.email {
-	width: 50% !important;
-	border-top: 0 !important;
-	border-left: 0 !important;
-	border-right: 0 !important;
-}
+	.email {
+		width: 100% !important;
+		border-top: 0 !important;
+		border-left: 0 !important;
+		border-right: 0 !important;
+	}
 
-.email:focus {
-	background-color: rgb(246, 246, 246) !important;
-	outline: none !important;
-	box-shadow: 0 0 0 0 rgba(0,0,0,0);
-	border-bottom: 1px solid #000 !important;
-}
+	.email:focus {
+		background-color: rgb(246, 246, 246) !important;
+		outline: none !important;
+		box-shadow: 0 0 0 0 rgba(0,0,0,0);
+		border-bottom: 1px solid #000 !important;
+	}
 
-.email:hover {
-	background-color: rgb(246, 246, 246) !important;
-	outline: none !important;
-}
+	.email:hover {
+		background-color: rgb(246, 246, 246) !important;
+		outline: none !important;
+	}
 
-.rounded-1 {
-	border-radius: 48px !important;
-}
+	.rounded-1 {
+		border-radius: 48px !important;
+	}
+
+	html {
+		font-size: 14px;
+	}
+	@media (min-width: 768px) {
+		html {
+			font-size: 16px;
+		}
+	}
+	@media (min-width: 992px) {
+		html {
+			font-size: 18px;
+		}
+	}
+
+	h1, .h1 {
+		font-size: 2.48832rem;
+	}
+
+	h2, .h2 {
+		font-size: 2.0736rem;
+	}
+
+	h3, .h3 {
+		font-size: 1.728rem;
+	}
+
+	h4, .h4 {
+		font-size: 1.44rem;
+	}
+
+	h5, .h5 {
+		font-size: 1.2rem;
+	}
+
+	h6, .h6 {
+		font-size: 1rem;
+	}
+
+	.display-4 {
+		font-size: 3.48832rem;
+	}
+
+	.display-3 {
+		font-size: 4.185984rem;
+	}
+
+	.display-2 {
+		font-size: 5.0231808rem;
+	}
+
+	.display-1 {
+		font-size: 6.02781696rem;
+	}
+
+	@media (max-device-width: 768px) {
+		h1, .h1 {
+			font-size: 2.48832rem;
+		}
+
+		h2, .h2 {
+			font-size: 2.0736rem;
+		}
+
+		h3, .h3 {
+			font-size: 2.728rem;
+		}
+
+		h4, .h4 {
+			font-size: 2.44rem;
+		}
+
+		h5, .h5 {
+			font-size: 1.2rem;
+		}
+
+		h6, .h6 {
+			font-size: 2.5rem;
+		}
+
+		.display-4 {
+			font-size: 5.5rem;
+			font-weight: 300;
+			line-height: 1.2;
+		}
+	}
+
+	.page-content {
+		flex: 1 0 auto;
+	}
+
+	.sticky-footer {
+		flex-shrink: none;
+	}
+
+	input:focus ~ .floating-label,
+	input:not(:focus):valid ~ .floating-label{
+		top: 8px;
+		bottom: 10px;
+		left: 20px;
+		font-size: 11px;
+		opacity: 1;
+		color: rgba(0,0,0,0.7);
+	}
+
+	.inputText {
+		font-size: 14px;
+		width: 200px;
+		height: 35px;
+	}
+
+	.floating-label {
+		position: absolute;
+		pointer-events: none;
+		left: 20px;
+		top: 18px;
+		transition: 0.2s ease all;
+		color: rgba(0,0,0,0.5);
+		font-weight: 400 !important;
+	}
