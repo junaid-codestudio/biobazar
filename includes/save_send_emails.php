@@ -15,8 +15,6 @@ $dbname = "biobazar";
 
 $conn = null;
 try {
-	send_email($email);
-	exit;
 	$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 	// set the PDO error mode to exception
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -25,6 +23,7 @@ try {
 	$stmt = $conn->prepare("INSERT IGNORE INTO email_subscriptions (email) VALUES (:email)");
 	$stmt->bindParam(':email', $email);
 	$stmt->execute();
+	send_email($email);
 	echo "New record created successfully";
 } catch(PDOException $e) {
 	echo "Connection failed: " . $e->getMessage();
@@ -35,9 +34,12 @@ try {
 function send_email($to)
 {
 	$link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-	$link = str_replace('includes/save_send_emails.php', 'verify_email.php', $link);
-	echo $link;
-	exit;
+	$link = str_replace('includes/save_send_emails.php', 'verify_email.php?link=', $link);
+
+	$coded = str_replace('+','-',str_replace('/','_',base64_encode($to)));
+
+	$link .= $coded;
+
 	require_once("../PHPMailer/src/PHPMailer.php");
 	require_once("../PHPMailer/src/SMTP.php");
 	require_once("../PHPMailer/src/Exception.php");
@@ -62,14 +64,10 @@ function send_email($to)
 
 	if($mail->send())
 	{
-		echo 'email send suss';
-		exit;
 		return true;
 	}
 	else
 	{
-		echo 'email not send suss';
-		exit;
 		return false;
 		echo "Failed To Sent An Email To Your Email Address";
 	}
