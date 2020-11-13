@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/** {
+	font-family: 'Noto Sans', sans-serif;
+}*/
+
+.bg-gray {
+	background-color: rgb(246, 246, 246);
+}
+
+.nav-green {
+	background-color: rgb(103, 189, 69);
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 700;
+}
+
+.text-bold {
+	font-weight: 700 !important;
+}
+
+.text-normal {
+	font-weight: 400 !important;
+}
+
+.main-title {
+	font-family: 'Karla', sans-serif;
+	font-size: 50px !important;
+}
+
+.noto-sans {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.email {
+	width: 50% !important;
+	border-top: 0 !important;
+	border-left: 0 !important;
+	border-right: 0 !important;
+}
+
+.email:focus {
+	background-color: rgb(246, 246, 246) !important;
+	outline: none !important;
+	box-shadow: 0 0 0 0 rgba(0,0,0,0);
+	border-bottom: 1px solid #000 !important;
+}
+
+.email:hover {
+	background-color: rgb(246, 246, 246) !important;
+	outline: none !important;
+}
+
+.rounded-1 {
+	border-radius: 48px !important;
+}
