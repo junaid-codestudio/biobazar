@@ -135,7 +135,7 @@ $emails = (array) $emails;
     $(document).ready(function () {
 
         var table = $('#datatable-responsive').DataTable({
-            buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
+            buttons: [ 'copy', 'excel', 'csv', 'pdf', 'colvis' ]
         });
 
         table.buttons().container().appendTo($('.tableTools-container2'));
