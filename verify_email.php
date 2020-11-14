@@ -22,7 +22,7 @@ try {
 		// set the PDO error mode to exception
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		$stmt = $conn->prepare("UPDATE email_subscriptions SET email_verified = 1,email_verified_at = NOW() WHERE email_verified = 0 and email = :email");
+		$stmt = $conn->prepare("UPDATE email_subscriptions SET email_verified_at = NOW() WHERE email_verified_at IS NULL and email = :email");
 		$stmt->bindParam(":email", $email);
 		$stmt->execute();
 		$result = $stmt->rowCount();

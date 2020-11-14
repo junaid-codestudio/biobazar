@@ -43,7 +43,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605212784344</updated>
-      <workItem from="1605212786538" duration="9417000" />
+      <workItem from="1605212786538" duration="10153000" />
     </task>
     <servers />
   </component>
@@ -79,5 +79,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="777" y="444" key="NewPhpFileDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1605214916103" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1605378234111">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1605378234111" />
   </component>
 </project>

@@ -67,7 +67,11 @@ function redirect($url)
 function send_email ($to)
 {
 	$link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-	$link = str_replace('includes/save_send_emails.php' , 'verify_email.php' , $link);
+	$link = str_replace('includes/save_send_emails.php' , 'verify_email.php?link=', $link);
+	
+	$coded = str_replace('+','-',str_replace('/','_',base64_encode($to)));
+	$link .= $coded;
+	
 	require_once("../PHPMailer/src/PHPMailer.php");
 	require_once("../PHPMailer/src/SMTP.php");
 	require_once("../PHPMailer/src/Exception.php");
