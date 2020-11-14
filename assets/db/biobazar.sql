@@ -7,9 +7,7 @@ CREATE TABLE email_subscriptions (
 	updated_at DATETIME DEFAULT current_timestamp() on update current_timestamp() NOT NULL,
 	deleted_at DATETIME NULL,
 	CONSTRAINT email_subscriptions_pk PRIMARY KEY (email_id),
-	CONSTRAINT email_subscriptions_un UNIQUE KEY (email),
-	email_verified INT DEFAULT 0 NOT NULL,
-	email_verified_at DATETIME NULL
+	CONSTRAINT email_subscriptions_un UNIQUE KEY (email)
 )
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
@@ -26,3 +24,5 @@ CREATE TABLE users (
 	PRIMARY KEY (user_id)
 )
 ENGINE = InnoDB;
+ALTER TABLE email_subscriptions ADD email_verified_at DATETIME NULL;
+CREATE INDEX email_subscriptions_email_verified_at_IDX USING BTREE ON email_subscriptions (email_verified_at);
