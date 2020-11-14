@@ -14,5 +14,15 @@ DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_general_ci;
 CREATE INDEX email_subscriptions_deleted_at_IDX USING BTREE ON email_subscriptions (deleted_at);
 
+CREATE TABLE users ( 
+	user_id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(100) NOT NULL,
+	email VARCHAR(500) NOT NULL,
+	password TEXT NOT NULL,
+	status INT DEFAULT 1 NOT NULL,
+	created_at DATETIME DEFAULT current_timestamp() NOT NULL,
+	PRIMARY KEY (user_id)
+)
+ENGINE = InnoDB;
 ALTER TABLE email_subscriptions ADD email_verified_at DATETIME NULL;
 CREATE INDEX email_subscriptions_email_verified_at_IDX USING BTREE ON email_subscriptions (email_verified_at);

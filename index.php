@@ -17,6 +17,10 @@ require_once 'includes/functions.php';
 
 // echo json_encode($en); exit;
 // echo $en['page_title']; exit;
+if (isset($_GET['email_verified'])) {
+	echo 'email_verified';
+	exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +30,7 @@ require_once 'includes/functions.php';
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title><?php __('page_title'); ?></title>
 
-	<link rel="shortcut icon" href="assets/images/FB_profileImage.jpg" type="image/x-icon">
+	<link rel="shortcut icon" href="assets/images/favicon.webp" type="image/x-icon">
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
