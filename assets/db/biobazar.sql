@@ -26,3 +26,6 @@ CREATE TABLE users (
 ENGINE = InnoDB;
 ALTER TABLE email_subscriptions ADD email_verified_at DATETIME NULL;
 CREATE INDEX email_subscriptions_email_verified_at_IDX USING BTREE ON email_subscriptions (email_verified_at);
+
+INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `status`, `created_at`) VALUES (NULL, 'admin', 'admin@biobazar.ch', '$2y$10$ADyC2OH7voLoPV/UwY/qDutTNmo4IXDNavGsF7HoADrmAg0vYt2nq', '1',
+                                                                                             current_timestamp());

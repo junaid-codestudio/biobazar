@@ -36,8 +36,8 @@ if( !isset($_SESSION)) {
 
         <!-- Login Form -->
         <form action="../includes/check_user.php" method="POST">
-            <input type="text" id="login" class="fadeIn second" name="email" placeholder="login">
-            <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+            <input type="email" id="login" class="fadeIn second" name="email" placeholder="login Email">
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
             <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
 
